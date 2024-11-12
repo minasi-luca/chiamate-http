@@ -7,6 +7,7 @@ import { AnimalsComponent } from './animals/animals.component';
 import { FruitsComponent } from './fruits/fruits.component';
 import { GenericComponent } from './generic/generic.component';
 import { FooComponent } from './foo/foo.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FooComponent } from './foo/foo.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
