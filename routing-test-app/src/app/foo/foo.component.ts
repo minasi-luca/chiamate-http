@@ -23,6 +23,23 @@ export class FooComponent {
      this.data = new Object(d);
      this.loading = false;
    }
+
+
+   makeCompactPost(): void {
+    this.loading = true;
+    this.http
+      .post('https://jsonplaceholder.typicode.com/posts',
+        JSON.stringify({
+          body: 'bar',
+          title: 'foo',
+          userId: 1
+        })
+      )
+      .subscribe(data => {
+        this.data = data;
+        this.loading = false;
+      });
+  }
    //Nota bene, questo è un metodo alternativo e compatto per fare la stessa cosa di 
    //makeRequest senza dichiarare la variabile Observable e creando l’arrow function   
    //direttamente dentro il metodo subscribe
@@ -37,21 +54,7 @@ export class FooComponent {
       }
       //L'operazione di post necessita un parametro in più.
 //Viene creata una stringa (JSON.strigify) a partire da un oggetto Typescript
- makeCompactPost(): void {
-  this.loading = true;
-  this.http
-    .post('https://jsonplaceholder.typicode.com/posts',
-      JSON.stringify({
-        body: 'bar',
-        title: 'foo',
-        userId: 1
-      })
-    )
-    .subscribe(data => {
-      this.data = data;
-      this.loading = false;
-    });
-}
+
 
 }
 
