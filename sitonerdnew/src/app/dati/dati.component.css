@@ -1,0 +1,82 @@
+/* Contenitore principale della carta */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Messaggio di caricamento */
+  .loading-message {
+    font-size: 1.5em;
+    color: #555;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+  }
+  
+  /* Animazione del caricamento */
+  @keyframes pulse {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+  
+  /* Dettagli della carta */
+  .card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Titolo della carta */
+  .card-title {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Immagine della carta */
+  .card-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Informazioni della carta */
+  .card-info {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-top: 15px;
+    color: #555;
+    width: 100%;
+  }
+  
+  /* Stile per i dettagli della carta */
+  .card-info p {
+    margin: 5px 0;
+  }
+  
+  /* Evidenziare il testo */
+  .card-info strong {
+    color: #4CAF50;
+  }
+  

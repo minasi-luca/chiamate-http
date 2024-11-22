@@ -1,17 +1,21 @@
-<div align="center">
-
-    <div *ngIf="caricamento">
+<div class="card-container" align="center">
+    <!-- Messaggio di caricamento -->
+    <div *ngIf="caricamento" class="loading-message">
       Caricamento...
     </div>
-  
     
-    <div *ngIf="!caricamento && datiCarta">
-      <h1>{{ datiCarta.name }}</h1> 
-      <img *ngIf="datiCarta.image_uris?.normal" [src]="datiCarta.image_uris.normal" alt="{{ datiCarta.name }}">
-      <p>Tipo: {{ datiCarta.type_line }}</p>
-      <p>Testo: {{ datiCarta.oracle_text }}</p>
-      <p>Set: {{ datiCarta.set_name }}</p>
-      <p>Prezzo: {{ datiCarta.prices?.usd || 'N/A' }}</p> 
+    <!-- Dettagli della carta -->
+    <div *ngIf="!caricamento && datiCarta" class="card-details">
+      <h1 class="card-title">{{ datiCarta.name }}</h1> 
+      
+      <img *ngIf="datiCarta.image_uris?.normal" [src]="datiCarta.image_uris.normal" alt="{{ datiCarta.name }}" class="card-image">
+      
+      <div class="card-info">
+        <p><strong>Tipo:</strong> {{ datiCarta.type_line }}</p>
+        <p><strong>Testo:</strong> {{ datiCarta.oracle_text }}</p>
+        <p><strong>Set:</strong> {{ datiCarta.set_name }}</p>
+        <p><strong>Prezzo:</strong> {{ datiCarta.prices?.usd || 'N/A' }}</p> 
+      </div>
     </div>
   </div>
   
