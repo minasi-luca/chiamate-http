@@ -1,37 +1,122 @@
-/* Contenitore centrato */
+/* Stile generale */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+.title-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.fancy-title {
+  font-size: 2.5em;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+/* Stile barra di ricerca */
+.search-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.search-bar {
+  width: 80%;
+  max-width: 600px;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: 2px solid #2c3e50;
+  border-radius: 30px;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.search-bar:focus {
+  border-color: #3498db;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenitore dei pulsanti */
 .button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+/* Stile pulsanti */
+.styled-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.styled-button:hover {
+  background: linear-gradient(90deg, #2ecc71, #3498db);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.styled-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+/* Titolo spettacolare */
+.fancy-title {
+  font-size: 4em;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #ffffff;
+  background: linear-gradient(90deg, #ff6b6b, #feca57, #54a0ff, #1dd1a1);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+  animation: gradientMove 6s ease infinite, glowPulse 1.5s ease-in-out infinite;
+  margin-bottom: 40px;
+}
+
+/* Effetto animazione gradiente */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  /* Pulsante stilizzato */
-  .styled-button {
-    background-color: #4CAF50; /* Colore di sfondo */
-    color: white; /* Colore del testo */
-    border: none;
-    border-radius: 12px; /* Angoli arrotondati */
-    padding: 12px 24px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s; /* Transizioni per effetto hover */
-    width: 250px; /* Larghezza uniforme */
+  50% {
+    background-position: 100% 50%;
   }
-  
-  /* Effetto hover */
-  .styled-button:hover {
-    background-color: #45a049; /* Colore più scuro al passaggio del mouse */
-    transform: scale(1.05); /* Leggera ingrandimento al passaggio del mouse */
+  100% {
+    background-position: 0% 50%;
   }
-  
-  /* Aggiungi uno sfondo morbido al contenitore */
-  .button-container {
-    background-color: #f4f4f9;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Effetto pulsazione glow */
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
   }
-  
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+  }
+}
+

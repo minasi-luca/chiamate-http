@@ -1,9 +1,24 @@
+<div class="title-container">
+  <h1 class="fancy-title">LE MIE CARTE MAGIC PREFERITE</h1>
+</div>
+
+<div class="search-container">
+  <input
+    type="text"
+    placeholder="Cerca una carta..."
+    [(ngModel)]="searchQuery"
+    class="search-bar"
+  />
+</div>
+
 <div class="button-container">
-    <button class="styled-button" routerLink="/carta/Disorient">Disorient</button>
-    <button class="styled-button" routerLink="/carta/Spectacular Showdown">Spectacular Showdown</button>
-    <button class="styled-button" routerLink="/carta/Mesmeric Fiend">Mesmeric Fiend</button>
-    <button class="styled-button" routerLink="/carta/Talisman of Resilience">Talisman of Resilience</button>
-    <button class="styled-button" routerLink="/carta/Command Tower">Command Tower</button>
-    <router-outlet></router-outlet>
-  </div>
-  
+  <button
+    *ngFor="let card of filteredCards"
+    class="styled-button"
+    [routerLink]="card.link"
+  >
+    {{ card.name }}
+  </button>
+</div>
+
+<router-outlet></router-outlet>
